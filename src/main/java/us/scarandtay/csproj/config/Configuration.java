@@ -3,12 +3,15 @@ package us.scarandtay.csproj.config;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import org.joda.time.LocalDate;
+import us.scarandtay.csproj.utils.Category;
 import us.scarandtay.csproj.utils.ListableItem;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Configuration {
     private final File config;
@@ -119,6 +122,29 @@ public class Configuration {
                 obj.add("items", new JsonArray());
                 writer.write(obj.toString());
                 writer.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            JsonObject base = new Gson().fromJson(Files.readString(config.toPath()), JsonObject.class);
+            JsonArray arr = base.getAsJsonArray("items");
+
+            if (arr.size() > 0) {
+                for (int i = 0; i < arr.size(); i++) {
+                    JsonObject object = arr.get(i).getAsJsonObject();
+                    String name = object.get("name").getAsString();
+                    String brand = object.get("brand").getAsString();
+                    Category category = Category.valueOf(object.get("category").getAsString());
+                    File image = new File(object.get("image").getAsString());
+                    LocalDate expirationDate = LocalDate.parse(object.get("expirationDate").getAsString());
+                    UUID uuid = UUID.fromString(object.get("uuid").getAsString());
+                    double price = object.get("price").getAsDouble();
+                    boolean inStock = object.get("inStock").getAsBoolean();
+
+                    new ListableItem(name, brand, category, expirationDate, image, price, inStock);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

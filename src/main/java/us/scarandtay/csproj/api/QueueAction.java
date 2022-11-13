@@ -1,6 +1,6 @@
 package us.scarandtay.csproj.api;
 
-public interface QueueAction<T> {
+public interface QueueAction {
     void queue();
 
     void complete();

@@ -1,7 +1,9 @@
 package us.scarandtay.csproj.utils;
 
+import org.joda.time.LocalDate;
+import us.scarandtay.csproj.Main;
+
 import java.io.File;
-import java.time.LocalDate;
 import java.util.UUID;
 
 public class ListableItem {
@@ -25,6 +27,7 @@ public class ListableItem {
         this.price = price;
         this.inStock = inStock;
         this.uuid = UUID.randomUUID();
+        Main.getInstance().memoryItemsList.add(this);
     }
 
     public String getName() {
