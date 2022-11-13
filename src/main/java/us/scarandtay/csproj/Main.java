@@ -12,16 +12,24 @@ import java.util.Queue;
 import java.util.concurrent.Callable;
 
 public class Main extends Application {
-    Configuration save = new Configuration("save.json");
-    Queue<Callable<String>> fileQueue = new LinkedList<>();
+    private static Main instance;
+    public Configuration save = new Configuration("save.json");
+    public Queue<Callable<String>> fileQueue = new LinkedList<>();
+    public Thread queuedThread;
 
     public static void main(String[] args) {
         launch();
     }
 
+    public static Main getInstance() {
+        return instance;
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
+        instance = this;
         initConfig();
+        initQueue();
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
@@ -35,8 +43,8 @@ public class Main extends Application {
     }
 
     private void initQueue() {
-        new Thread(() -> {
-            while(true) {
+        queuedThread = new Thread(() -> {
+            while (true) {
                 try {
                     if (!fileQueue.isEmpty()) {
                         fileQueue.peek().call();
@@ -46,6 +54,7 @@ public class Main extends Application {
                     e.printStackTrace();
                 }
             }
-        }).start();
+        });
+        queuedThread.start();
     }
 }

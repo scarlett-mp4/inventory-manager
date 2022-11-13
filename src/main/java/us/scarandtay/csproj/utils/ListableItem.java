@@ -1,6 +1,8 @@
 package us.scarandtay.csproj.utils;
 
+import java.io.File;
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class ListableItem {
 
@@ -8,17 +10,21 @@ public class ListableItem {
     private final String brand;
     private final Category category;
     private final LocalDate expirationDate;
+    private final File image;
+    private final UUID uuid;
     private final double price;
     private final boolean inStock;
 
 
-    public ListableItem(String name, String brand, Category category, LocalDate expirationDate, double price, boolean inStock) {
+    public ListableItem(String name, String brand, Category category, LocalDate expirationDate, File image, double price, boolean inStock) {
         this.name = name;
         this.brand = brand;
         this.category = category;
         this.expirationDate = expirationDate;
+        this.image = image;
         this.price = price;
         this.inStock = inStock;
+        this.uuid = UUID.randomUUID();
     }
 
     public String getName() {
@@ -43,5 +49,13 @@ public class ListableItem {
 
     public boolean isInStock() {
         return inStock;
+    }
+
+    public File getImage() {
+        return image;
+    }
+
+    public UUID getUUID() {
+        return uuid;
     }
 }
