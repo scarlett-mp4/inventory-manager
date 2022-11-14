@@ -14,25 +14,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.config.Controller">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.Controller">
    <SplitPane dividerPositions="0.061872909698996656" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0">
       <AnchorPane id="buttonArea" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="52.0">
          <Button id="homeButton" fx:id="hButton" layoutY="51.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="76.0" textAlignment="CENTER" AnchorPane.bottomAnchor="675.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
             <graphic>
                <ImageView id="homeIcon" fitHeight="24.0" fitWidth="27.0">
-                  <Image url="@../../../csproj-icons/house-solid.png" />
+                  <Image url="@../icons/house-solid.png" />
                </ImageView>
             </graphic></Button>
          <Button id="newButton" fx:id="nButton" layoutY="165.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="76.0" AnchorPane.bottomAnchor="561.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.0">
             <graphic>
                <ImageView id="newIcon" fitHeight="26.0" fitWidth="28.0" opacity="0.5">
-                  <Image url="@../../../csproj-icons/circle-plus-solid.png" />
+                  <Image url="@../icons/circle-plus-solid.png" />
                </ImageView>
             </graphic></Button>
          <Button id="searchButton" fx:id="sButton" layoutY="284.0" minWidth="34.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="76.0" AnchorPane.bottomAnchor="442.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="284.0">
             <graphic>
                <ImageView id="searchIcon" fitHeight="31.0" fitWidth="30.0" opacity="0.5">
-                  <Image url="@../../../csproj-icons/magnifying-glass-solid.png" />
+                  <Image url="@../icons/magnifying-glass-solid.png" />
                </ImageView>
             </graphic></Button>
       </AnchorPane>
@@ -69,7 +69,7 @@
                      </font>
                   </Text>
                   <ImageView id="itemImage" fx:id="objImage" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../csproj-icons/question-solid.png" />
+                     <Image url="@../icons/question-solid.png" />
                   </ImageView>
                   <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
                      <font>
@@ -103,7 +103,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage1" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -139,7 +139,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage2" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -175,7 +175,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage3" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -211,7 +211,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage4" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -251,7 +251,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage1" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -287,7 +287,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage11" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -323,7 +323,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage21" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -359,7 +359,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage31" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">
@@ -395,7 +395,7 @@
                      </Text>
                      <ImageView id="itemImage" fx:id="objImage41" fitHeight="208.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../csproj-icons/question-solid.png" />
+                           <Image url="@../icons/question-solid.png" />
                         </image>
                      </ImageView>
                      <Text id="objCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="obj Category">

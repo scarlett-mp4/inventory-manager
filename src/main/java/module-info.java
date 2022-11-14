@@ -6,4 +6,6 @@ module us.scarandtay.csproj {
 
     opens us.scarandtay.csproj to javafx.fxml;
     exports us.scarandtay.csproj;
+    exports us.scarandtay.csproj.controller;
+    opens us.scarandtay.csproj.controller to javafx.fxml;
 }

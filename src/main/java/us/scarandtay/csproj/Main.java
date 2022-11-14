@@ -1,21 +1,18 @@
 package us.scarandtay.csproj;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import us.scarandtay.csproj.api.Api;
+import javafx.stage.StageStyle;
 import us.scarandtay.csproj.config.Configuration;
 import us.scarandtay.csproj.utils.ListableItem;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.Queue;
 
 public class Main extends Application {
@@ -25,7 +22,6 @@ public class Main extends Application {
     public Thread queuedThread;
     public ArrayList<ListableItem> memoryItemsList = new ArrayList<>();
 
-
     public static void main(String[] args) {
         launch();
     }
@@ -33,6 +29,8 @@ public class Main extends Application {
     public static Main getInstance() {
         return instance;
     }
+    private double windowPositionX, windowPositionY;
+    public Parent root;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -40,9 +38,12 @@ public class Main extends Application {
         initConfig();
         initQueue();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
-        stage.setTitle("Hello!");
+        this.root = FXMLLoader.load(Main.class.getResource("metroPane.fxml"));
+        Scene scene = new Scene(root, 1100, 600);
+        scene.setFill(Color.TRANSPARENT);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setResizable(false);
+        stage.setTitle("CS201 Item Manager");
         stage.setScene(scene);
         stage.show();
     }

@@ -19,6 +19,15 @@ public class Api {
         return Main.getInstance().memoryItemsList;
     }
 
+    public static ArrayList<ListableItem> getItems(Category category) {
+        ArrayList<ListableItem> list = new ArrayList<>();
+        if (Main.getInstance().memoryItemsList.size() > 0)
+            for (ListableItem item : Main.getInstance().memoryItemsList)
+                if (item.getCategory() == category)
+                    list.add(item);
+        return list;
+    }
+
     public static QueueAction createItem(String name, String brand, Category category, LocalDate expirationDate, File image, double price, boolean inStock) {
         return new QueueAction() {
             @Override
