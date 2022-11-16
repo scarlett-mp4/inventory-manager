@@ -12,7 +12,7 @@ public class ListableItem {
     private final String brand;
     private final Category category;
     private final LocalDate expirationDate;
-    private final File image;
+    private File image;
     private final UUID uuid;
     private final double price;
     private final boolean inStock;
@@ -60,5 +60,9 @@ public class ListableItem {
 
     public UUID getUUID() {
         return uuid;
+    }
+
+    public void setImage(File file) {
+        image = file;
     }
 }

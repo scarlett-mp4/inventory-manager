@@ -10,11 +10,6 @@ import java.util.ArrayList;
 
 public class Api {
 
-    private static void create(String name, String brand, Category category, LocalDate expirationDate, File image, double price, boolean inStock) {
-        ListableItem item = new ListableItem(name, brand, category, expirationDate, image, price, inStock);
-        Main.getInstance().save.addItem(item);
-    }
-
     public static ArrayList<ListableItem> getItems() {
         return Main.getInstance().memoryItemsList;
     }
@@ -33,7 +28,9 @@ public class Api {
             @Override
             public void queue() {
                 Main.getInstance().fileQueue.add(() -> {
-                    create(name, brand, category, expirationDate, image, price, inStock);
+                    ListableItem item = new ListableItem(name, brand, category, expirationDate, image, price, inStock);
+                    Main.getInstance().save.addItem(item);
+                    System.out.println("Item Queued");
                 });
             }
 

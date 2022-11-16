@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.joda.time.LocalDate;
+import us.scarandtay.csproj.Main;
 import us.scarandtay.csproj.utils.Category;
 import us.scarandtay.csproj.utils.ListableItem;
 
@@ -26,7 +27,7 @@ public class Configuration {
 
     public boolean itemExists(ListableItem item) {
         try {
-            JsonObject base = new Gson().fromJson(Files.readString(config.toPath()), JsonObject.class);
+            JsonObject base = Main.getInstance().gson.fromJson(Files.readString(config.toPath()), JsonObject.class);
             JsonArray arr = base.getAsJsonArray("items");
 
             if (arr.size() > 0) {
@@ -45,7 +46,7 @@ public class Configuration {
 
     public void removeItem(ListableItem item) {
         try {
-            JsonObject base = new Gson().fromJson(Files.readString(config.toPath()), JsonObject.class);
+            JsonObject base = Main.getInstance().gson.fromJson(Files.readString(config.toPath()), JsonObject.class);
             JsonArray arr = base.getAsJsonArray("items");
             boolean isFileModified = false;
 
@@ -77,7 +78,7 @@ public class Configuration {
 
     public void addItem(ListableItem item) {
         try {
-            JsonObject base = new Gson().fromJson(Files.readString(config.toPath()), JsonObject.class);
+            JsonObject base = Main.getInstance().gson.fromJson(Files.readString(config.toPath()), JsonObject.class);
             JsonArray arr = base.getAsJsonArray("items");
 
             if (arr.size() > 0) {
@@ -87,6 +88,11 @@ public class Configuration {
                         arr.remove(i);
                     }
                 }
+            }
+
+            if (item.getImage() == null) {
+                File file = new File("src/main/resources/us/scarandtay/icons/circle-plus-solid.png");
+                item.setImage(file);
             }
 
             JsonObject itemObject = new JsonObject();
@@ -128,7 +134,7 @@ public class Configuration {
         }
 
         try {
-            JsonObject base = new Gson().fromJson(Files.readString(config.toPath()), JsonObject.class);
+            JsonObject base = Main.getInstance().gson.fromJson(Files.readString(config.toPath()), JsonObject.class);
             JsonArray arr = base.getAsJsonArray("items");
 
             if (arr.size() > 0) {
