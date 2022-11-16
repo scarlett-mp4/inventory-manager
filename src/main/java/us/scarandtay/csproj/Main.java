@@ -18,6 +18,7 @@ import us.scarandtay.csproj.utils.ListableItem;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Main extends Application {
     private static Main instance;
@@ -44,7 +45,7 @@ public class Main extends Application {
         initConfig();
         initQueue();
 
-        this.root = FXMLLoader.load(Main.class.getResource("metroPane.fxml"));
+        this.root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("metroPane.fxml")));
         Scene scene = new Scene(root, 1100, 600);
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);

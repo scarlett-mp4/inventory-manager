@@ -1,35 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane maxHeight="600.0" maxWidth="1100.0" minHeight="600.0" minWidth="1100.0" onMouseDragged="#dragEvent" onMousePressed="#pressedEvent" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-radius: 10px; -fx-background-color: #2C302E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.MetroPane">
-   <Button layoutX="1061.0" layoutY="5.0" mnemonicParsing="false" prefHeight="0.0" style="-fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: #ffffff; -fx-border-radius: 10;" stylesheets="@../css/button.css" fx:id="xButton">
+<AnchorPane maxHeight="600.0" maxWidth="1100.0" minHeight="600.0" minWidth="1100.0" onMouseDragged="#dragEvent" onMousePressed="#pressedEvent" prefHeight="600.0" prefWidth="1100.0" styleClass="container" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.MetroPane">
+   <AnchorPane layoutY="1.0" prefHeight="40.0" prefWidth="1100.0" styleClass="container__grip" stylesheets="@../css/style.css">
+      <children>
+         <Button fx:id="closeButton" layoutX="1066.0" layoutY="8.0" mnemonicParsing="false" prefHeight="0.0" styleClass="container__topButton" stylesheets="@../css/style.css">
+            <graphic>
+               <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../icons/xmark-solid.png" />
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="minimizeButton" layoutX="1036.0" layoutY="8.0" mnemonicParsing="false" prefHeight="0.0" styleClass="container__topButton" stylesheets="@../css/style.css">
+            <graphic>
+               <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../icons/window-minimize-solid.png" />
+               </ImageView>
+            </graphic>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer" />
+   <Button layoutX="11.0" layoutY="41.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
       <graphic>
-         <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../icons/xmark-solid.png" />
+         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../icons/house-solid.png" />
+            </image>
          </ImageView>
       </graphic>
    </Button>
-   <Button fx:id="minimizeButton" layoutX="1019.0" layoutY="5.0" mnemonicParsing="false" prefHeight="28.0" style="-fx-background-color: transparent; -fx-border-width: 2px; -fx-border-color: #ffffff; -fx-border-radius: 10;" stylesheets="@../css/button.css" textAlignment="CENTER">
+   <Pane layoutX="5.0" layoutY="42.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
+   <Button layoutX="11.0" layoutY="102.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
       <graphic>
-         <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../icons/window-minimize-solid.png" />
+         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../icons/magnifying-glass-solid.png" />
+            </image>
          </ImageView>
       </graphic>
    </Button>
-   <ScrollPane layoutX="68.0" layoutY="38.0" prefHeight="562.0" prefWidth="1032.0">
-      <content>
-         <Label prefHeight="51.0" prefWidth="380.0" text="Welcome," />
-      </content>
-      <padding>
-         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-      </padding>
-   </ScrollPane>
+   <Pane layoutX="5.0" layoutY="103.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
+   <Button layoutX="11.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+      <graphic>
+         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../icons/circle-plus-solid.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Pane layoutX="5.0" layoutY="164.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
 </AnchorPane>

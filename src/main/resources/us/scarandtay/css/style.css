@@ -1,0 +1,38 @@
+.container {
+    -fx-background-radius: 10px;
+    -fx-background-color:  #2C302E;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #494949;
+}
+
+.container__topButton {
+    -fx-background-color: transparent;
+}
+
+.container__topButton:hover {
+    -fx-background-color: #ff7070;
+    -fx-background-radius: 10px;
+}
+
+.container__pageContainer, .container__pageContainer__sideButton {
+    -fx-background-color: #474747;
+    -fx-background-radius: 10px 0px 10px 0px;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px 0px 10px 0px;
+    -fx-border-color: #494949;
+}
+
+.container__grip {
+    -fx-background-color: transparent;
+}
+
+.container__pageContainer__sideButton:hover {
+    -fx-background-color: #676767;
+    -fx-border-color: #676767;
+}
+
+.container__pageContainer__sideIndicator {
+    -fx-background-color: #676767;
+}
+
