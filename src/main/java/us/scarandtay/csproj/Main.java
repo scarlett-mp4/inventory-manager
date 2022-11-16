@@ -37,11 +37,13 @@ public class Main extends Application {
     private double windowPositionX, windowPositionY;
     public Parent root;
     public Gson gson;
+    public Stage stage;
 
     @Override
     public void start(Stage stage) throws IOException {
         instance = this;
         gson = new GsonBuilder().create();
+        this.stage = stage;
         initConfig();
         initQueue();
 
@@ -53,8 +55,6 @@ public class Main extends Application {
         stage.setTitle("CS201 Item Manager");
         stage.setScene(scene);
         stage.show();
-
-
     }
 
     private void initConfig() {
@@ -62,7 +62,7 @@ public class Main extends Application {
     }
 
     private void initQueue() {
-        new Thread(() -> {
+        queuedThread = new Thread(() -> {
             while (true) {
                 try {
                     if (fileQueue.get(0) != null) {
@@ -72,6 +72,7 @@ public class Main extends Application {
                 } catch (Exception ignored) {
                 }
             }
-        }).start();
+        });
+        queuedThread.start();
     }
 }
