@@ -1,0 +1,39 @@
+.page__home__welcomeText, .page__home__welcomeName {
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+
+.page__home__welcomeText {
+    -fx-font-size: 30px;
+}
+
+.page__home__welcomeName {
+    -fx-font-size: 40px;
+}
+
+.page__home__filter {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: #6c6c6c;
+}
+
+.page__home__filter .arrow {
+    -fx-background-color: #6c6c6c;
+}
+
+.page__home__scrollPane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-radius: 10px;
+    -fx-background-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #6c6c6c;
+}
+
+.page__home__scrollPane > .viewport {
+    -fx-background-color: transparent;
+}

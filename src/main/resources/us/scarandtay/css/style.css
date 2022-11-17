@@ -36,3 +36,10 @@
     -fx-background-color: #676767;
 }
 
+.container__grip__title {
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+    -fx-font-family: "Arial Rounded MT Bold";
+    -fx-font-size: 15px;
+}
+

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
 
 <AnchorPane maxHeight="600.0" maxWidth="1100.0" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1100.0" styleClass="container" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.MetroPane">
    <AnchorPane layoutY="1.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" styleClass="container__grip" stylesheets="@../css/style.css">
@@ -23,37 +29,64 @@
                </ImageView>
             </graphic>
          </Button>
+         <Label layoutX="12.0" layoutY="9.0" prefHeight="18.0" prefWidth="209.0" styleClass="container__grip__title" stylesheets="@../css/style.css" text="CS 201: Inventory Manager" />
       </children>
    </AnchorPane>
-   <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer" />
-   <Button layoutX="11.0" layoutY="41.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
-      <graphic>
-         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../icons/house-solid.png" />
-            </image>
-         </ImageView>
-      </graphic>
-   </Button>
-   <Pane layoutX="5.0" layoutY="42.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
-   <Button layoutX="11.0" layoutY="102.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
-      <graphic>
-         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../icons/magnifying-glass-solid.png" />
-            </image>
-         </ImageView>
-      </graphic>
-   </Button>
-   <Pane layoutX="5.0" layoutY="103.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
-   <Button layoutX="11.0" layoutY="163.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
-      <graphic>
-         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../icons/circle-plus-solid.png" />
-            </image>
-         </ImageView>
-      </graphic>
-   </Button>
-   <Pane layoutX="5.0" layoutY="164.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
+   <AnchorPane layoutX="5.0" layoutY="41.0">
+      <children>
+         <Button layoutX="6.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+            <graphic>
+               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../icons/house-solid.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Pane layoutY="1.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
+         <Button layoutX="6.0" layoutY="61.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+            <graphic>
+               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../icons/magnifying-glass-solid.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Pane layoutY="62.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
+         <Button layoutX="6.0" layoutY="122.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+            <graphic>
+               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../icons/circle-plus-solid.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Pane layoutY="123.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer" stylesheets="@../css/home.css">
+      <children>
+         <ScrollPane layoutX="13.0" layoutY="121.0" prefHeight="426.0" prefWidth="1000.0">
+            <content>
+               <TilePane prefHeight="850.0" prefWidth="969.0" />
+            </content>
+            <styleClass>
+               <String fx:value="page__home__scrollPane" />
+               <String fx:value="scrollbar" />
+            </styleClass>
+            <stylesheets>
+               <URL value="@../css/home.css" />
+               <URL value="@../css/scrollbar.css" />
+            </stylesheets>
+         </ScrollPane>
+         <AnchorPane layoutX="14.0" layoutY="14.0">
+            <children>
+               <Label layoutX="4.0" layoutY="6.0" prefHeight="32.0" prefWidth="162.0" styleClass="page__home__welcomeText" stylesheets="@../css/style.css" text="Welcome," />
+               <ChoiceBox layoutX="805.0" layoutY="64.0" prefHeight="26.0" prefWidth="192.0" styleClass="page__home__filter" stylesheets="@../css/home.css" />
+               <Label layoutX="3.0" layoutY="42.0" prefHeight="58.0" prefWidth="722.0" styleClass="page__home__welcomeName" stylesheets="@../css/style.css" text="Scarlett!" />
+            </children>
+         </AnchorPane>
+      </children></AnchorPane>
 </AnchorPane>
