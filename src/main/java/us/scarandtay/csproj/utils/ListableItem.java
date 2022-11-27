@@ -12,10 +12,10 @@ public class ListableItem {
     private final String brand;
     private final Category category;
     private final LocalDate expirationDate;
-    private File image;
     private final UUID uuid;
     private final double price;
     private final boolean inStock;
+    private File image;
 
 
     public ListableItem(String name, String brand, Category category, LocalDate expirationDate, File image, double price, boolean inStock) {
@@ -58,11 +58,11 @@ public class ListableItem {
         return image;
     }
 
-    public UUID getUUID() {
-        return uuid;
-    }
-
     public void setImage(File file) {
         image = file;
+    }
+
+    public UUID getUUID() {
+        return uuid;
     }
 }

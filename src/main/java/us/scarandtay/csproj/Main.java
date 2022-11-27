@@ -9,10 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.joda.time.LocalDate;
-import us.scarandtay.csproj.api.Api;
 import us.scarandtay.csproj.config.Configuration;
-import us.scarandtay.csproj.utils.Category;
 import us.scarandtay.csproj.utils.ListableItem;
 
 import java.io.IOException;
@@ -26,6 +23,9 @@ public class Main extends Application {
     public LinkedList<Runnable> fileQueue = new LinkedList<>();
     public Thread queuedThread;
     public ArrayList<ListableItem> memoryItemsList = new ArrayList<>();
+    public Parent root;
+    public Gson gson;
+    public Stage stage;
 
     public static void main(String[] args) {
         launch();
@@ -34,10 +34,6 @@ public class Main extends Application {
     public static Main getInstance() {
         return instance;
     }
-    private double windowPositionX, windowPositionY;
-    public Parent root;
-    public Gson gson;
-    public Stage stage;
 
     @Override
     public void start(Stage stage) throws IOException {

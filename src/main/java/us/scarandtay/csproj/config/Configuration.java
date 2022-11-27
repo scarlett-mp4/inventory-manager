@@ -1,9 +1,9 @@
 package us.scarandtay.csproj.config;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.joda.time.LocalDate;
+import us.scarandtay.csproj.Launcher;
 import us.scarandtay.csproj.Main;
 import us.scarandtay.csproj.utils.Category;
 import us.scarandtay.csproj.utils.ListableItem;
@@ -11,6 +11,7 @@ import us.scarandtay.csproj.utils.ListableItem;
 import java.io.File;
 import java.io.FileWriter;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -19,8 +20,13 @@ public class Configuration {
     private final File resourceFolder;
 
     public Configuration(String path) {
-        String configPath = "src/main/resources/configuration/" + path;
-        String resourceFolderPath = "src/main/resources/configuration";
+        Path parentPath = Path.of(String.valueOf(Launcher.class.getProtectionDomain().
+                getCodeSource().getLocation()).substring(6)).getParent();
+        String resourceFolderPath = parentPath.toString() + "\\configuration";
+        String configPath = resourceFolderPath + "\\" + path;
+        resourceFolderPath = "/" + resourceFolderPath.replaceAll("\\\\", "/");
+        configPath = "/" + configPath.replaceAll("\\\\", "/");
+
         this.resourceFolder = new File(resourceFolderPath);
         this.config = new File(configPath);
     }
