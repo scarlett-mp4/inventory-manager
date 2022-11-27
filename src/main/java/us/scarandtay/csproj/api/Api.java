@@ -24,21 +24,11 @@ public class Api {
     }
 
     public static QueueAction createItem(String name, String brand, Category category, LocalDate expirationDate, File image, double price, boolean inStock) {
-        return new QueueAction() {
-            @Override
-            public void queue() {
-                Main.getInstance().fileQueue.add(() -> {
-                    ListableItem item = new ListableItem(name, brand, category, expirationDate, image, price, inStock);
-                    Main.getInstance().save.addItem(item);
-                    System.out.println("Item Queued");
-                });
-            }
-
-            @Override
-            public void complete() {
-
-            }
-        };
+        return () -> Main.getInstance().fileQueue.add(() -> {
+            ListableItem item = new ListableItem(name, brand, category, expirationDate, image, price, inStock);
+            Main.getInstance().save.addItem(item);
+            System.out.println("Item Queued");
+        });
     }
 
 }

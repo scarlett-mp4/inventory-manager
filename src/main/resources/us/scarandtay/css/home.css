@@ -24,6 +24,15 @@
     -fx-background-color: #6c6c6c;
 }
 
+.page__home__filter .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.page__home__filter .context-menu {
+    -fx-background-color: black;
+}
+
 .page__home__scrollPane {
     -fx-background-insets: 0;
     -fx-padding: 0;

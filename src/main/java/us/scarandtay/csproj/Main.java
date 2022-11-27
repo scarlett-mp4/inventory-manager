@@ -23,7 +23,9 @@ public class Main extends Application {
     public LinkedList<Runnable> fileQueue = new LinkedList<>();
     public Thread queuedThread;
     public ArrayList<ListableItem> memoryItemsList = new ArrayList<>();
-    public Parent root;
+    public Scene home;
+    public Scene add;
+    public Scene search;
     public Gson gson;
     public Stage stage;
 
@@ -43,13 +45,18 @@ public class Main extends Application {
         initConfig();
         initQueue();
 
-        this.root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("metroPane.fxml")));
-        Scene scene = new Scene(root, 1100, 600);
-        scene.setFill(Color.TRANSPARENT);
+        home = new Scene(FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("home.fxml"))), 1100, 600);
+        add = new Scene(FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("add.fxml"))), 1100, 600);
+        search = new Scene(FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("search.fxml"))), 1100, 600);
+
+        home.setFill(Color.TRANSPARENT);
+        add.setFill(Color.TRANSPARENT);
+        search.setFill(Color.TRANSPARENT);
+
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setResizable(false);
         stage.setTitle("CS201 Item Manager");
-        stage.setScene(scene);
+        stage.setScene(home);
         stage.show();
     }
 

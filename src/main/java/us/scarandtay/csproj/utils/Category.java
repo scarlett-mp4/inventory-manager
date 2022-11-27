@@ -1,6 +1,7 @@
 package us.scarandtay.csproj.utils;
 
 public enum Category {
+    ALL,
     ALCOHOL,
     BAKERY,
     BEVERAGES,

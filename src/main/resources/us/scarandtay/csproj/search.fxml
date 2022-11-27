@@ -3,16 +3,14 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="600.0" maxWidth="1100.0" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1100.0" styleClass="container" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.MetroPane">
+<AnchorPane maxHeight="600.0" maxWidth="1100.0" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1100.0" styleClass="container" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.SearchController">
    <AnchorPane layoutY="1.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" styleClass="container__grip" stylesheets="@../css/style.css">
       <children>
          <Button fx:id="closeButton" layoutX="1066.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#buttonCloseEvent" prefHeight="0.0" styleClass="container__topButton" stylesheets="@../css/style.css">
@@ -34,7 +32,7 @@
    </AnchorPane>
    <AnchorPane layoutX="5.0" layoutY="41.0">
       <children>
-         <Button layoutX="6.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+         <Button layoutX="6.0" mnemonicParsing="false" onMouseClicked="#homeTabClicked" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
             <graphic>
                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -43,7 +41,6 @@
                </ImageView>
             </graphic>
          </Button>
-         <Pane layoutY="1.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
          <Button layoutX="6.0" layoutY="61.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
             <graphic>
                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
@@ -54,7 +51,7 @@
             </graphic>
          </Button>
          <Pane layoutY="62.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
-         <Button layoutX="6.0" layoutY="122.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+         <Button layoutX="6.0" layoutY="122.0" mnemonicParsing="false" onMouseClicked="#addTabClicked" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
             <graphic>
                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -63,7 +60,6 @@
                </ImageView>
             </graphic>
          </Button>
-         <Pane layoutY="123.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
       </children>
    </AnchorPane>
    <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer" stylesheets="@../css/home.css">
@@ -77,17 +73,7 @@
                <URL value="@../css/home.css" />
                <URL value="@../css/scrollbar.css" />
             </stylesheets>
-            <content>
-               <ListView fx:id="home_list" prefHeight="330.0" prefWidth="810.0" />
-            </content>
          </ScrollPane>
-         <AnchorPane layoutX="14.0" layoutY="14.0">
-            <children>
-               <Label layoutX="4.0" layoutY="6.0" prefHeight="32.0" prefWidth="162.0" styleClass="page__home__welcomeText" stylesheets="@../css/style.css" text="Welcome," />
-               <ChoiceBox layoutX="805.0" layoutY="64.0" prefHeight="26.0" prefWidth="192.0" styleClass="page__home__filter" stylesheets="@../css/home.css" />
-               <Label layoutX="3.0" layoutY="42.0" prefHeight="58.0" prefWidth="722.0" styleClass="page__home__welcomeName" stylesheets="@../css/style.css" text="Scarlett!" />
-               <Button fx:id="testButton" layoutX="305.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#testButton" prefHeight="26.0" prefWidth="314.0" text="a silly little test button" />
-            </children>
-         </AnchorPane>
+         <AnchorPane layoutX="14.0" layoutY="14.0" />
       </children></AnchorPane>
 </AnchorPane>
