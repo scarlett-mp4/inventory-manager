@@ -7,6 +7,7 @@ import us.scarandtay.csproj.utils.ListableItem;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.UUID;
 
 //          _________   ________________________  ____
@@ -21,7 +22,9 @@ public class Api {
 
     // Returns a list of ListableItems from memory.
     public static ArrayList<ListableItem> getItems() {
-        return Main.getInstance().memoryItemsList;
+        ArrayList<ListableItem> list = Main.getInstance().memoryItemsList;
+        list.sort(Comparator.comparing(ListableItem::getName));
+        return list;
     }
 
     // Create a ListableItem
