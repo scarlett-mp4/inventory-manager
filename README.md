@@ -14,6 +14,7 @@
     <br>· Quick search items on the fly
     <br>· Categories and sorting options
     <br>· Customize items useful information
+    <br>· Windows, Mac, and Linux support
     <br>· ...and more!
 </p>
 
