@@ -20,6 +20,10 @@
     -fx-border-color: #6c6c6c;
 }
 
+.page__home__filter:hover {
+    -fx-opacity: 75%;
+}
+
 .page__home__filter .arrow {
     -fx-background-color: #6c6c6c;
 }
@@ -45,4 +49,26 @@
 
 .page__home__scrollPane > .viewport {
     -fx-background-color: transparent;
+}
+
+.page__home__listview {
+    -fx-background-color: transparent;
+}
+
+.page__home__listview .list-cell {
+    -fx-background-color: transparent;
+}
+
+.page__home__refresh {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: #6c6c6c;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.page__home__refresh:hover {
+    -fx-opacity: 75%;
 }

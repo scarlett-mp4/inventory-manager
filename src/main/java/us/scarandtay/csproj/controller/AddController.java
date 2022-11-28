@@ -38,6 +38,10 @@ public class AddController implements Initializable {
     private File selectedImage;
     private double x = 0, y = 0;
 
+    public AddController() {
+        Main.getInstance().addController = this;
+    }
+
     public void mouseDragged(MouseEvent mouseEvent) {
         Main.getInstance().stage.setX(mouseEvent.getScreenX() - x);
         Main.getInstance().stage.setY(mouseEvent.getScreenY() - y);
@@ -95,6 +99,7 @@ public class AddController implements Initializable {
 
     public void homeTabClicked(MouseEvent mouseEvent) {
         Main.getInstance().stage.setScene(Main.getInstance().home);
+        Main.getInstance().homeController.refresh(Main.getInstance().homeController.choiceBox.getValue());
     }
 
     public void createButtonClicked(MouseEvent mouseEvent) {
@@ -125,12 +130,12 @@ public class AddController implements Initializable {
             Api.createItem(button__name.getText(), button__brand.getText(), button__category.getValue(),
                     jodaDate, selectedImage, price, inStock).queue();
 
-            button__name.setText("");
-            button__brand.setText("");
-            button__price.setText("");
-            button__date.setValue(java.time.LocalDate.now());
-            button__category.setValue(null);
-            button__stock.setValue("In Stock");
+//            button__name.setText("");
+//            button__brand.setText("");
+//            button__price.setText("");
+//            button__date.setValue(java.time.LocalDate.now());
+//            button__category.setValue(null);
+//            button__stock.setValue("In Stock");
 
 
             errorLabel.setText("· Item Created!");

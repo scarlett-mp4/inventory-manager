@@ -155,7 +155,7 @@ public class Configuration {
                     double price = object.get("price").getAsDouble();
                     boolean inStock = object.get("inStock").getAsBoolean();
 
-                    new ListableItem(name, brand, category, expirationDate, image, price, inStock);
+                    new ListableItem(name, brand, category, expirationDate, image, price, inStock, uuid);
                 }
             }
         } catch (Exception e) {

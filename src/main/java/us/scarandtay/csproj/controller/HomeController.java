@@ -7,9 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import us.scarandtay.csproj.Main;
+import us.scarandtay.csproj.api.Api;
 import us.scarandtay.csproj.utils.Category;
+import us.scarandtay.csproj.utils.ListableItem;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -20,17 +25,17 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable {
     public Button closeButton;
     public Button minimizeButton;
-    public Button testButton;
-    public ListView<Button> home_list;
+    public Button refreshButton;
+    public ListView<Pane> home_list;
     public ChoiceBox<Category> choiceBox;
     private double x = 0, y = 0;
 
-    public void testButton(MouseEvent mouseEvent) {
-        Button b = new Button("hey bitch");
-        List<Button> list = new ArrayList<>(home_list.getItems());
-        list.add(b);
-        ObservableList<Button> obList = FXCollections.observableList(list);
-        home_list.setItems(obList);
+    public HomeController() {
+        Main.getInstance().homeController = this;
+    }
+
+    public void refreshButtonClicked(MouseEvent mouseEvent) {
+        refresh(choiceBox.getValue());
     }
 
     public void mouseDragged(MouseEvent mouseEvent) {
@@ -59,6 +64,11 @@ public class HomeController implements Initializable {
         List<Category> list = new ArrayList<>(Arrays.asList(Category.values()));
         choiceBox.setItems(FXCollections.observableList(list));
         choiceBox.setValue(Category.ALL);
+        refresh(choiceBox.getValue());
+
+        choiceBox.setOnAction((actionEvent -> {
+            refresh(choiceBox.getValue());
+        }));
     }
 
     public void addTabClicked(MouseEvent mouseEvent) {
@@ -67,5 +77,17 @@ public class HomeController implements Initializable {
 
     public void searchTabClicked(MouseEvent mouseEvent) {
         Main.getInstance().stage.setScene(Main.getInstance().search);
+    }
+
+    public void refresh(Category category) {
+        List<Pane> paneList = new ArrayList<>();
+        for (ListableItem item : Api.getItems()) {
+            if (category.equals(Category.ALL))
+                paneList.add(item.createPane());
+            else
+                if (category == item.getCategory())
+                    paneList.add(item.createPane());
+        }
+        home_list.setItems(FXCollections.observableList(paneList));
     }
 }

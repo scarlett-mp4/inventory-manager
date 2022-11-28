@@ -9,12 +9,13 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import us.scarandtay.csproj.config.Configuration;
+import us.scarandtay.csproj.controller.AddController;
+import us.scarandtay.csproj.controller.HomeController;
+import us.scarandtay.csproj.controller.SearchController;
 import us.scarandtay.csproj.utils.ListableItem;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Objects;
+import java.util.*;
 
 public class Main extends Application {
     private static Main instance;
@@ -25,6 +26,9 @@ public class Main extends Application {
     public Scene home;
     public Scene add;
     public Scene search;
+    public HomeController homeController;
+    public AddController addController;
+    public SearchController searchController;
     public Gson gson;
     public Stage stage;
 

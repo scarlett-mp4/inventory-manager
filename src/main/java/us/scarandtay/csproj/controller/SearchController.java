@@ -14,6 +14,10 @@ public class SearchController implements Initializable {
     public Button minimizeButton;
     private double x = 0, y = 0;
 
+    public SearchController () {
+        Main.getInstance().searchController = this;
+    }
+
     public void mouseDragged(MouseEvent mouseEvent) {
         Main.getInstance().stage.setX(mouseEvent.getScreenX() - x);
         Main.getInstance().stage.setY(mouseEvent.getScreenY() - y);
@@ -42,6 +46,7 @@ public class SearchController implements Initializable {
 
     public void homeTabClicked(MouseEvent mouseEvent) {
         Main.getInstance().stage.setScene(Main.getInstance().home);
+        Main.getInstance().homeController.refresh(Main.getInstance().homeController.choiceBox.getValue());
     }
 
     public void addTabClicked(MouseEvent mouseEvent) {
