@@ -2,13 +2,10 @@ package us.scarandtay.csproj.controller;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import us.scarandtay.csproj.Main;
@@ -84,9 +81,8 @@ public class HomeController implements Initializable {
         for (ListableItem item : Api.getItems()) {
             if (category.equals(Category.ALL))
                 paneList.add(item.createPane());
-            else
-                if (category == item.getCategory())
-                    paneList.add(item.createPane());
+            else if (category == item.getCategory())
+                paneList.add(item.createPane());
         }
         home_list.setItems(FXCollections.observableList(paneList));
     }

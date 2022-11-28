@@ -15,7 +15,9 @@ import us.scarandtay.csproj.controller.SearchController;
 import us.scarandtay.csproj.utils.ListableItem;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Objects;
 
 public class Main extends Application {
     private static Main instance;

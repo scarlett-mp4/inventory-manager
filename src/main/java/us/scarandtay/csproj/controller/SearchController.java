@@ -14,7 +14,7 @@ public class SearchController implements Initializable {
     public Button minimizeButton;
     private double x = 0, y = 0;
 
-    public SearchController () {
+    public SearchController() {
         Main.getInstance().searchController = this;
     }
 
