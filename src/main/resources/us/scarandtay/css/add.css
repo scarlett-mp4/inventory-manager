@@ -1,0 +1,68 @@
+.page__add__textInputLabel {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 0px 0px 0px 5px;
+}
+
+.page__add__textInput {
+    -fx-background-radius: 10px;
+    -fx-background-color: #888888;
+    -fx-text-fill: #ffffff;
+}
+
+.page__add__dateInput {
+    -fx-background-color: #888888;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.page__add__dateInput .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+
+.page__add__listInput {
+    -fx-background-color: #888888;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.page__add__listInput .arrow {
+    -fx-background-color: #6c6c6c;
+}
+
+.page__add__listInput .label {
+    -fx-text-fill: #ffffff;
+}
+
+.page__add__listInput .context-menu {
+    -fx-background-color: black;
+}
+
+.page__add__picture {
+    -fx-background-color: #888888;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.page__add__picture:hover {
+    -fx-background-color: #b2b2b2;
+}
+
+.page__add__create {
+    -fx-background-color: #888888;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.page__add__create:hover {
+    -fx-background-color: #b2b2b2;
+}
