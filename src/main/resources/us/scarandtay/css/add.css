@@ -66,3 +66,9 @@
 .page__add__create:hover {
     -fx-background-color: #b2b2b2;
 }
+
+.page__home__errorLabel {
+    -fx-text-fill: #c0c0c0;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}

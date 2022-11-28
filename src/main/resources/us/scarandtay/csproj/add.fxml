@@ -65,16 +65,16 @@
    <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer" stylesheets="@../css/home.css">
       <children>
          <Label layoutX="14.0" layoutY="15.0" prefHeight="36.0" prefWidth="282.0" styleClass="page__home__welcomeText" stylesheets="@../css/style.css" text="Add Your Product:" />
-         <Button fx:id="button__image" layoutX="737.0" layoutY="154.0" mnemonicParsing="false" prefHeight="250.0" prefWidth="250.0" styleClass="page__add__picture" stylesheets="@../css/add.css">
+         <Button fx:id="button__image" layoutX="733.0" layoutY="136.0" mnemonicParsing="false" prefHeight="250.0" prefWidth="250.0" styleClass="page__add__picture" stylesheets="@../css/add.css">
             <graphic>
-               <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="button__image__view" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../icons/unknown-photo-logo.png" />
                   </image>
                </ImageView>
             </graphic>
          </Button>
-         <AnchorPane layoutX="14.0" layoutY="118.0">
+         <AnchorPane layoutX="14.0" layoutY="70.0">
             <children>
                <AnchorPane>
                   <children>
@@ -100,14 +100,21 @@
                      <DatePicker fx:id="button__date" layoutY="22.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__dateInput" stylesheets="@../css/add.css" />
                   </children>
                </AnchorPane>
-               <AnchorPane layoutY="264.0">
-                  <children>
-                     <ChoiceBox fx:id="button__stock" layoutY="23.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__listInput" stylesheets="@../css/add.css" />
-                     <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Stock Status" />
-                  </children>
-               </AnchorPane>
             </children>
          </AnchorPane>
-         <Button fx:id="button__create" layoutX="847.0" layoutY="478.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="139.0" styleClass="page__add__create" stylesheets="@../css/add.css" text="Create" />
+         <Button fx:id="button__create" layoutX="843.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#createButtonClicked" prefHeight="32.0" prefWidth="139.0" styleClass="page__add__create" stylesheets="@../css/add.css" text="Create" />
+         <Label fx:id="errorLabel" layoutX="14.0" layoutY="477.0" prefHeight="36.0" prefWidth="578.0" styleClass="page__home__errorLabel" stylesheets="@../css/add.css" text="Error/Success Label" />
+         <AnchorPane layoutX="14.0" layoutY="402.0">
+            <children>
+               <ChoiceBox fx:id="button__stock" layoutY="26.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__listInput" stylesheets="@../css/add.css" />
+               <Label layoutY="3.0" prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Stock Status" />
+            </children>
+         </AnchorPane>
+         <AnchorPane layoutX="14.0" layoutY="337.0">
+            <children>
+               <ChoiceBox fx:id="button__category" layoutY="23.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__listInput" stylesheets="@../css/add.css" />
+               <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Category" />
+            </children>
+         </AnchorPane>
       </children></AnchorPane>
 </AnchorPane>
