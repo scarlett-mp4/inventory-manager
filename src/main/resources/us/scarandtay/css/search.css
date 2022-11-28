@@ -1,0 +1,7 @@
+.page__search__bar {
+    -fx-background-color: #888888;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}

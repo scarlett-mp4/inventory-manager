@@ -178,6 +178,7 @@ public class ListableItem {
             try {
                 Thread.sleep(5);
                 Main.getInstance().homeController.refresh(Main.getInstance().homeController.choiceBox.getValue());
+                Main.getInstance().searchController.refresh(Main.getInstance().searchController.searchBar.getText());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

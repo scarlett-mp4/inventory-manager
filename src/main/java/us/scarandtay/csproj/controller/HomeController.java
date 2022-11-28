@@ -74,6 +74,7 @@ public class HomeController implements Initializable {
 
     public void searchTabClicked(MouseEvent mouseEvent) {
         Main.getInstance().stage.setScene(Main.getInstance().search);
+        Main.getInstance().searchController.refresh(Main.getInstance().searchController.searchBar.getText());
     }
 
     public void refresh(Category category) {

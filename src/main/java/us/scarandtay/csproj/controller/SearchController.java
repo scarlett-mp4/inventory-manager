@@ -1,17 +1,28 @@
 package us.scarandtay.csproj.controller;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import us.scarandtay.csproj.Main;
+import us.scarandtay.csproj.api.Api;
+import us.scarandtay.csproj.utils.Category;
+import us.scarandtay.csproj.utils.ListableItem;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SearchController implements Initializable {
     public Button closeButton;
     public Button minimizeButton;
+    public TextField searchBar;
+    public ListView<Pane> search_list;
     private double x = 0, y = 0;
 
     public SearchController() {
@@ -41,7 +52,10 @@ public class SearchController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        refresh(searchBar.getText());
+        searchBar.setOnKeyTyped((actionEvent -> {
+            refresh(searchBar.getText());
+        }));
     }
 
     public void homeTabClicked(MouseEvent mouseEvent) {
@@ -51,5 +65,14 @@ public class SearchController implements Initializable {
 
     public void addTabClicked(MouseEvent mouseEvent) {
         Main.getInstance().stage.setScene(Main.getInstance().add);
+    }
+
+    public void refresh(String contains) {
+        List<Pane> paneList = new ArrayList<>();
+        for (ListableItem item : Api.getItems()) {
+            if (item.getName().toLowerCase().contains(contains))
+                paneList.add(item.createPane());
+        }
+        search_list.setItems(FXCollections.observableList(paneList));
     }
 }
