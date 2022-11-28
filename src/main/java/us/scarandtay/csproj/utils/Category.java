@@ -1,5 +1,6 @@
 package us.scarandtay.csproj.utils;
 
+// List of possible categories a ListableItem may represent
 public enum Category {
     ALL,
     ALCOHOL,

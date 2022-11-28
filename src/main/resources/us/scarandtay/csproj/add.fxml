@@ -11,110 +11,112 @@
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane maxHeight="600.0" maxWidth="1100.0" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1100.0" styleClass="container" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="us.scarandtay.csproj.controller.AddController">
-   <AnchorPane layoutY="1.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" styleClass="container__grip" stylesheets="@../css/style.css">
-      <children>
-         <Button fx:id="closeButton" layoutX="1066.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#buttonCloseEvent" prefHeight="0.0" styleClass="container__topButton" stylesheets="@../css/style.css">
-            <graphic>
-               <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../icons/xmark-solid.png" />
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button fx:id="minimizeButton" layoutX="1036.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#buttonMinimizeEvent" prefHeight="0.0" styleClass="container__topButton" stylesheets="@../css/style.css">
-            <graphic>
-               <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../icons/window-minimize-solid.png" />
-               </ImageView>
-            </graphic>
-         </Button>
-         <Label layoutX="12.0" layoutY="9.0" prefHeight="18.0" prefWidth="209.0" styleClass="container__grip__title" stylesheets="@../css/style.css" text="CS 201: Inventory Manager" />
-      </children>
+   <AnchorPane layoutY="1.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" styleClass="container__grip"
+               stylesheets="@../css/style.css">
+      <Button fx:id="closeButton" layoutX="1066.0" layoutY="8.0" mnemonicParsing="false"
+              onMouseClicked="#buttonCloseEvent" prefHeight="0.0" styleClass="container__topButton"
+              stylesheets="@../css/style.css">
+         <graphic>
+            <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icons/xmark-solid.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="minimizeButton" layoutX="1036.0" layoutY="8.0" mnemonicParsing="false"
+              onMouseClicked="#buttonMinimizeEvent" prefHeight="0.0" styleClass="container__topButton"
+              stylesheets="@../css/style.css">
+         <graphic>
+            <ImageView fitHeight="12.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icons/window-minimize-solid.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="12.0" layoutY="9.0" prefHeight="18.0" prefWidth="209.0" styleClass="container__grip__title"
+             stylesheets="@../css/style.css" text="CS 201: Inventory Manager"/>
    </AnchorPane>
    <AnchorPane layoutX="5.0" layoutY="41.0">
-      <children>
-         <Button layoutX="6.0" mnemonicParsing="false" onMouseClicked="#homeTabClicked" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
-            <graphic>
-               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../icons/house-solid.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button layoutX="6.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#searchTabClicked" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
-            <graphic>
-               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../icons/magnifying-glass-solid.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button layoutX="6.0" layoutY="122.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
-            <graphic>
-               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../icons/circle-plus-solid.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Pane layoutY="123.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator" stylesheets="@../css/style.css" />
-      </children>
+      <Button layoutX="6.0" mnemonicParsing="false" onMouseClicked="#homeTabClicked" prefHeight="50.0" prefWidth="50.0"
+              styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icons/house-solid.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="6.0" layoutY="61.0" mnemonicParsing="false" onMouseClicked="#searchTabClicked" prefHeight="50.0"
+              prefWidth="50.0" styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icons/magnifying-glass-solid.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="6.0" layoutY="122.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0"
+              styleClass="container__pageContainer__sideButton" stylesheets="@../css/style.css">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../icons/circle-plus-solid.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane layoutY="123.0" prefHeight="50.0" prefWidth="2.0" styleClass="container__pageContainer__sideIndicator"
+            stylesheets="@../css/style.css"/>
    </AnchorPane>
-   <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer" stylesheets="@../css/home.css">
-      <children>
-         <Label layoutX="14.0" layoutY="15.0" prefHeight="36.0" prefWidth="282.0" styleClass="page__home__welcomeText" stylesheets="@../css/style.css" text="Add Your Product:" />
-         <Button fx:id="button__image" layoutX="733.0" layoutY="136.0" mnemonicParsing="false" prefHeight="250.0" prefWidth="250.0" styleClass="page__add__picture" stylesheets="@../css/add.css">
-            <graphic>
-               <ImageView fx:id="button__image__view" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../icons/unknown-photo-logo.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <AnchorPane layoutX="14.0" layoutY="70.0">
-            <children>
-               <AnchorPane>
-                  <children>
-                     <TextField fx:id="button__name" layoutY="20.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__textInput" stylesheets="@../css/add.css" />
-                     <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Name" />
-                  </children>
-               </AnchorPane>
-               <AnchorPane layoutY="66.0">
-                  <children>
-                     <TextField fx:id="button__brand" layoutY="20.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__textInput" stylesheets="@../css/add.css" />
-                     <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Brand" />
-                  </children>
-               </AnchorPane>
-               <AnchorPane layoutY="132.0">
-                  <children>
-                     <TextField fx:id="button__price" layoutY="20.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__textInput" stylesheets="@../css/add.css" />
-                     <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Price" />
-                  </children>
-               </AnchorPane>
-               <AnchorPane layoutY="198.0">
-                  <children>
-                     <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Expiration Date" />
-                     <DatePicker fx:id="button__date" layoutY="22.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__dateInput" stylesheets="@../css/add.css" />
-                  </children>
-               </AnchorPane>
-            </children>
+   <AnchorPane layoutX="70.0" layoutY="41.0" prefHeight="559.0" prefWidth="1030.0" styleClass="container__pageContainer"
+               stylesheets="@../css/home.css">
+      <Label layoutX="14.0" layoutY="15.0" prefHeight="36.0" prefWidth="282.0" styleClass="page__home__welcomeText"
+             stylesheets="@../css/style.css" text="Add Your Product:"/>
+      <Button fx:id="button__image" layoutX="733.0" layoutY="136.0" mnemonicParsing="false" prefHeight="250.0"
+              prefWidth="250.0" styleClass="page__add__picture" stylesheets="@../css/add.css">
+         <graphic>
+            <ImageView fx:id="button__image__view" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true"
+                       preserveRatio="true">
+               <Image url="@../icons/unknown-photo-logo.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane layoutX="14.0" layoutY="70.0">
+         <AnchorPane>
+            <TextField fx:id="button__name" layoutY="20.0" prefHeight="36.0" prefWidth="500.0"
+                       styleClass="page__add__textInput" stylesheets="@../css/add.css"/>
+            <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel"
+                   stylesheets="@../css/add.css" text="Name"/>
          </AnchorPane>
-         <Button fx:id="button__create" layoutX="843.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#createButtonClicked" prefHeight="32.0" prefWidth="139.0" styleClass="page__add__create" stylesheets="@../css/add.css" text="Create" />
-         <Label fx:id="errorLabel" layoutX="14.0" layoutY="477.0" prefHeight="36.0" prefWidth="578.0" styleClass="page__home__errorLabel" stylesheets="@../css/add.css" text="Error/Success Label" />
-         <AnchorPane layoutX="14.0" layoutY="402.0">
-            <children>
-               <ChoiceBox fx:id="button__stock" layoutY="26.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__listInput" stylesheets="@../css/add.css" />
-               <Label layoutY="3.0" prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Stock Status" />
-            </children>
+         <AnchorPane layoutY="66.0">
+            <TextField fx:id="button__brand" layoutY="20.0" prefHeight="36.0" prefWidth="500.0"
+                       styleClass="page__add__textInput" stylesheets="@../css/add.css"/>
+            <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel"
+                   stylesheets="@../css/add.css" text="Brand"/>
          </AnchorPane>
-         <AnchorPane layoutX="14.0" layoutY="337.0">
-            <children>
-               <ChoiceBox fx:id="button__category" layoutY="23.0" prefHeight="36.0" prefWidth="500.0" styleClass="page__add__listInput" stylesheets="@../css/add.css" />
-               <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel" stylesheets="@../css/add.css" text="Category" />
-            </children>
+         <AnchorPane layoutY="132.0">
+            <TextField fx:id="button__price" layoutY="20.0" prefHeight="36.0" prefWidth="500.0"
+                       styleClass="page__add__textInput" stylesheets="@../css/add.css"/>
+            <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel"
+                   stylesheets="@../css/add.css" text="Price"/>
          </AnchorPane>
-      </children></AnchorPane>
+         <AnchorPane layoutY="198.0">
+            <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel"
+                   stylesheets="@../css/add.css" text="Expiration Date"/>
+            <DatePicker fx:id="button__date" layoutY="22.0" prefHeight="36.0" prefWidth="500.0"
+                        styleClass="page__add__dateInput" stylesheets="@../css/add.css"/>
+         </AnchorPane>
+      </AnchorPane>
+      <Button fx:id="button__create" layoutX="843.0" layoutY="460.0" mnemonicParsing="false"
+              onMouseClicked="#createButtonClicked" prefHeight="32.0" prefWidth="139.0" styleClass="page__add__create"
+              stylesheets="@../css/add.css" text="Create"/>
+      <Label fx:id="errorLabel" layoutX="14.0" layoutY="477.0" prefHeight="36.0" prefWidth="578.0"
+             styleClass="page__home__errorLabel" stylesheets="@../css/add.css" text="Error/Success Label"/>
+      <AnchorPane layoutX="14.0" layoutY="402.0">
+         <ChoiceBox fx:id="button__stock" layoutY="26.0" prefHeight="36.0" prefWidth="500.0"
+                    styleClass="page__add__listInput" stylesheets="@../css/add.css"/>
+         <Label layoutY="3.0" prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel"
+                stylesheets="@../css/add.css" text="Stock Status"/>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="337.0">
+         <ChoiceBox fx:id="button__category" layoutY="23.0" prefHeight="36.0" prefWidth="500.0"
+                    styleClass="page__add__listInput" stylesheets="@../css/add.css"/>
+         <Label prefHeight="20.0" prefWidth="400.0" styleClass="page__add__textInputLabel"
+                stylesheets="@../css/add.css" text="Category"/>
+      </AnchorPane>
+   </AnchorPane>
 </AnchorPane>

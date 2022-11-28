@@ -19,41 +19,32 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
+//          _________   ________________________  ____
+//         \_   ___ \ /   _____/\_____  \   _  \/_   |
+//         /    \  \/ \_____  \  /  ____/  /_\  \|   |
+//         \     \____/        \/       \  \_/   \   |
+//          \______  /_______  /\_______ \_____  /___|
+//                 \/        \/         \/     \/
+//                      Inventory Manager
+//        Written by: Scarlett Kadan & Taylor Washington
 public class HomeController implements Initializable {
-    public Button closeButton;
-    public Button minimizeButton;
-    public Button refreshButton;
-    public ListView<Pane> home_list;
-    public ChoiceBox<Category> choiceBox;
-    private double x = 0, y = 0;
 
+    // Window "top-bar" definitions
+    public Button closeButton;              // "x" button node
+    public Button minimizeButton;           // "-" button node
+    private double x = 0, y = 0;            // Window position
+
+    // Home scene definitions
+    public Button refreshButton;            // refresh button node
+    public ChoiceBox<Category> choiceBox;   // choice box node
+    public ListView<Pane> home_list;        // ListableItem.createPane() list
+
+    // - Constructor -
+    // Defines the homeController variable in main as
+    // this instance. Useful for refreshing home_list when
+    // switching tabs.
     public HomeController() {
         Main.getInstance().homeController = this;
-    }
-
-    public void refreshButtonClicked(MouseEvent mouseEvent) {
-        refresh(choiceBox.getValue());
-    }
-
-    public void mouseDragged(MouseEvent mouseEvent) {
-        Main.getInstance().stage.setX(mouseEvent.getScreenX() - x);
-        Main.getInstance().stage.setY(mouseEvent.getScreenY() - y);
-    }
-
-    public void mousePressed(MouseEvent mouseEvent) {
-        x = mouseEvent.getSceneX();
-        y = mouseEvent.getSceneY();
-    }
-
-    public void buttonCloseEvent(MouseEvent mouseEvent) {
-        Main.getInstance().stage.close();
-        Main.getInstance().queuedThread.interrupt();
-        Platform.exit();
-        System.exit(0);
-    }
-
-    public void buttonMinimizeEvent(MouseEvent mouseEvent) {
-        Main.getInstance().stage.setIconified(true);
     }
 
     @Override
@@ -68,15 +59,6 @@ public class HomeController implements Initializable {
         }));
     }
 
-    public void addTabClicked(MouseEvent mouseEvent) {
-        Main.getInstance().stage.setScene(Main.getInstance().add);
-    }
-
-    public void searchTabClicked(MouseEvent mouseEvent) {
-        Main.getInstance().stage.setScene(Main.getInstance().search);
-        Main.getInstance().searchController.refresh(Main.getInstance().searchController.searchBar.getText());
-    }
-
     public void refresh(Category category) {
         List<Pane> paneList = new ArrayList<>();
         for (ListableItem item : Api.getItems()) {
@@ -86,5 +68,52 @@ public class HomeController implements Initializable {
                 paneList.add(item.createPane());
         }
         home_list.setItems(FXCollections.observableList(paneList));
+    }
+
+    public void refreshButtonClicked() {
+        refresh(choiceBox.getValue());
+    }
+
+
+    // ----- Tab Handlers -----
+
+    // Sets stage to add scene
+    public void addTabClicked(MouseEvent mouseEvent) {
+        Main.getInstance().stage.setScene(Main.getInstance().add);
+    }
+
+    // Sets stage to search scene
+    public void searchTabClicked(MouseEvent mouseEvent) {
+        Main.getInstance().stage.setScene(Main.getInstance().search);
+        Main.getInstance().searchController.refresh(Main.getInstance().searchController.searchBar.getText());
+    }
+
+
+    // ----- Window handlers -----
+
+    // Window drag handler
+    // Updates the windows position
+    public void mouseDragged(MouseEvent mouseEvent) {
+        Main.getInstance().stage.setX(mouseEvent.getScreenX() - x);
+        Main.getInstance().stage.setY(mouseEvent.getScreenY() - y);
+    }
+
+    // Initializes x and y for dragEvent
+    public void mousePressed(MouseEvent mouseEvent) {
+        x = mouseEvent.getSceneX();
+        y = mouseEvent.getSceneY();
+    }
+
+    // Adds functionality to close button
+    public void buttonCloseEvent() {
+        Main.getInstance().stage.close();
+        Main.getInstance().queuedThread.interrupt();
+        Platform.exit();
+        System.exit(0);
+    }
+
+    // Adds functionality to minimize button
+    public void buttonMinimizeEvent() {
+        Main.getInstance().stage.setIconified(true);
     }
 }
