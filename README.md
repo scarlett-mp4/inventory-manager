@@ -53,7 +53,6 @@
     <br><br>*We recommend you use IntelliJ to compile and build this project*
 </p>
 
-
 <h3>
     User Manual:
 </h3>
@@ -65,6 +64,7 @@
     Showcase:
 </h3>
 <p>
+   <img src="https://media.discordapp.net/attachments/982459115060211722/1046958714046906389/Untitled-1.png?width=1086&height=663" alt="uml">
    <img src="https://media.discordapp.net/attachments/1035798463377588254/1046925942381093005/list.gif" alt="demo"> 
    <img src="https://media.discordapp.net/attachments/1035798463377588254/1046925942041358356/add.gif" alt="demo"> 
    <img src="https://media.discordapp.net/attachments/1035798463377588254/1046925941710016542/remove.gif" alt="demo"> 
