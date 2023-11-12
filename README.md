@@ -57,9 +57,6 @@
     User Manual:
 </h3>
 
-
-[Link to user manual...](https://docs.google.com/document/d/15ktqA3bpZDj9FHhekXsks4C_VDUZg0Hi_OXVXwh30Rk/edit?usp=sharing)
-
 <h3>
     Showcase:
 </h3>
