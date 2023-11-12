@@ -54,10 +54,6 @@
 </p>
 
 <h3>
-    User Manual:
-</h3>
-
-<h3>
     Showcase:
 </h3>
 <p>
